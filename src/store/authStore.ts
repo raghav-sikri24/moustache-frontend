@@ -1,36 +1,24 @@
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
-interface AuthState {
+interface AUTH_STATE {
   accessToken: string;
   refreshToken: string;
-  isAuthenticated: boolean;
-  setTokens: (accessToken: string, refreshToken: string) => void;
-  clearTokens: () => void;
+  setAccessToken: (payload: string) => void;
+  setRefreshToken: (payload: string) => void;
 }
 
-export const useAuthStore = create<AuthState>()(
+export const authStore = create<AUTH_STATE>()(
   devtools(
     persist(
-      (set) => ({
-        accessToken: '',
-        refreshToken: '',
-        isAuthenticated: false,
-        setTokens: (accessToken, refreshToken) =>
-          set(() => ({
-            accessToken,
-            refreshToken,
-            isAuthenticated: true,
-          })),
-        clearTokens: () =>
-          set(() => ({
-            accessToken: '',
-            refreshToken: '',
-            isAuthenticated: false,
-          })),
+      (set, _) => ({
+        accessToken: "",
+        refreshToken: "",
+        setAccessToken: (payload) => set(() => ({ accessToken: payload })),
+        setRefreshToken: (payload) => set(() => ({ refreshToken: payload })),
       }),
       {
-        name: 'auth-store',
+        name: "AuthStore",
       }
     )
   )
