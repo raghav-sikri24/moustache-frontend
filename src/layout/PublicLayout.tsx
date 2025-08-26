@@ -9,13 +9,7 @@ export default function PublicLayout() {
     <MotionFlex
       width={"100dvw"}
       height={"100dvh"}
-      className="overflow-y-auto"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.2,
-        ease: [0.4, 0.0, 0.2, 1],
-      }}
+      className="overflow-y-auto flex flex-col py-0 my-0"
     >
       <Outlet />
     </MotionFlex>

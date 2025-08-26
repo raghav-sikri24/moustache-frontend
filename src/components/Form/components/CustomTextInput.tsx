@@ -84,6 +84,7 @@ const CustomTextInput = ({
           placeholder={placeholder}
           disabled={disabled}
           w={"100%"}
+          bg={"inherit"}
           cursor={disabled ? "not-allowed" : "text"}
           _placeholder={{
             fontSize: "14px",

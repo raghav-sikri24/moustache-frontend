@@ -23,7 +23,6 @@ export default function PageLayout({
         w={"full"}
         h={"full"}
         overflowY={"auto"}
-        p={"24px"}
         {...props}
       >
         {children}

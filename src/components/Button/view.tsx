@@ -18,12 +18,12 @@ export default function CustomButton({
   leftIcon,
   rightIcon,
   children,
-  loading = false,
-  disabled = false,
+  isLoading = false,
+  isDisabled = false,
   onClick,
   ...props
 }: CustomButtonProps) {
-  const isDisabled = disabled || loading;
+  const disabled = isDisabled || isLoading;
   const validVariant =
     variant && BUTTON_VARIANTS[variant] ? variant : "primary";
   const variantConfig = BUTTON_VARIANTS[validVariant];
@@ -36,7 +36,7 @@ export default function CustomButton({
       case "secondary":
         return "primary.500";
       case "tertiary":
-        return "black.600";
+        return "black.900";
       default:
         return "primary.500";
     }
@@ -57,27 +57,27 @@ export default function CustomButton({
 
   return (
     <Button
-      disabled={isDisabled}
-      isLoading={loading}
-      onClick={isDisabled || loading ? () => {} : onClick}
-      cursor={isDisabled ? "not-allowed" : "pointer"}
+      disabled={disabled}
+      isLoading={isLoading}
+      onClick={disabled || isLoading ? () => {} : onClick}
+      cursor={disabled ? "not-allowed" : "pointer"}
       // Base styles
       {...BUTTON_BASE_STYLES}
       // Variant styles
-      bg={isDisabled ? variantConfig.disabled.bg : variantConfig.normal.bg}
+      bg={disabled ? variantConfig.disabled.bg : variantConfig.normal.bg}
       color={
-        isDisabled ? variantConfig.disabled.color : variantConfig.normal.color
+        disabled ? variantConfig.disabled.color : variantConfig.normal.color
       }
       border={variantConfig.normal.border}
       borderColor={
-        isDisabled
+        disabled
           ? variantConfig.disabled.borderColor
           : variantConfig.normal.borderColor
       }
-      opacity={isDisabled ? variantConfig.disabled.opacity : 1}
+      opacity={disabled ? variantConfig.disabled.opacity : 1}
       // Hover states
       _hover={
-        isDisabled
+        disabled
           ? {
               bg: variantConfig.disabled.bg,
               color: variantConfig.disabled.color,
@@ -94,7 +94,7 @@ export default function CustomButton({
       }
       // Active states
       _active={
-        isDisabled
+        disabled
           ? {
               bg: variantConfig.disabled.bg,
               color: variantConfig.disabled.color,
@@ -111,7 +111,7 @@ export default function CustomButton({
       }
       // Focus states
       _focus={
-        isDisabled
+        disabled
           ? {
               outline: "none",
               boxShadow: "none",
@@ -134,7 +134,7 @@ export default function CustomButton({
         <HStack
           spacing="8px"
           align="center"
-          visibility={loading ? "hidden" : "visible"}
+          visibility={isLoading ? "hidden" : "visible"}
         >
           {leftIcon && <span>{leftIcon}</span>}
           {children && <span>{children}</span>}
@@ -142,7 +142,7 @@ export default function CustomButton({
         </HStack>
 
         {/* Spinner on top, centered absolutely */}
-        {loading && (
+        {isLoading && (
           <Spinner
             position="absolute"
             size="xl"

@@ -22,7 +22,7 @@ const getRoutes = (accessToken: string) => {
   } else {
     routes.push({
       path: "*",
-      element: <Navigate to="/login" />,
+      element: <Navigate to="/landing-page" />,
     });
   }
 
@@ -35,8 +35,8 @@ const getRoutes = (accessToken: string) => {
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
         ))}
-      </Route>
-    )
+      </Route>,
+    ),
   );
 };
 

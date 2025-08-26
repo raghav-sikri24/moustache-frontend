@@ -7,20 +7,20 @@ import {
 } from "./types";
 
 export const isFormInitActionType = (
-  value: TInitFormActionType | TFormActionType
+  value: TInitFormActionType | TFormActionType,
 ): value is TInitFormActionType => {
   return "type" in value && value.type === FormState.INIT;
 };
 
 export const isErrorResetActionType = (
-  value: TErrorResetActionType | TFormErrorActionType
+  value: TErrorResetActionType | TFormErrorActionType,
 ): value is TErrorResetActionType => {
   return "type" in value && value.type === FormState.RESET;
 };
 
 export const formReducer = (
   state: any,
-  action: TFormActionType | TInitFormActionType
+  action: TFormActionType | TInitFormActionType,
 ) => {
   if (isFormInitActionType(action)) {
     return {
@@ -36,7 +36,7 @@ export const formReducer = (
 
 export const formErrorsReducer = (
   state: any,
-  action: TErrorResetActionType | TFormErrorActionType
+  action: TErrorResetActionType | TFormErrorActionType,
 ) => {
   if (isErrorResetActionType(action)) {
     return {};

@@ -19,7 +19,7 @@ export const authStore = create<AUTH_STATE>()(
       }),
       {
         name: "AuthStore",
-      }
-    )
-  )
+      },
+    ),
+  ),
 );

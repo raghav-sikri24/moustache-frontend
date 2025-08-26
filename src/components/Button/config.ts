@@ -35,14 +35,14 @@ export const BUTTON_VARIANTS: Record<
 > = {
   primary: {
     normal: {
-      bg: "primary.500",
+      bg: "black.900",
       color: "white.absolute",
       border: "none",
       borderColor: "transparent",
     },
     disabled: {
-      bg: "grey.100",
-      color: "grey.400",
+      bg: "gray.100",
+      color: "gray.400",
       borderColor: "transparent",
       opacity: 0.6,
     },
@@ -66,25 +66,25 @@ export const BUTTON_VARIANTS: Record<
   secondary: {
     normal: {
       bg: "white.absolute",
-      color: "primary.500",
+      color: "black.900",
       border: "1px solid",
-      borderColor: "primary.500",
+      borderColor: "black.900",
     },
     disabled: {
-      bg: "grey.10",
-      color: "grey.400",
-      borderColor: "grey.100",
+      bg: "gray.10",
+      color: "gray.400",
+      borderColor: "gray.100",
       opacity: 0.6,
     },
     hover: {
       opacity: 0.8,
-      borderColor: "primary.400",
+      borderColor: "black.900",
       transform: "translateY(-0.5px)",
       boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
     },
     active: {
-      bg: "primary.100",
-      borderColor: "primary.600",
+      bg: "black.100",
+      borderColor: "black.900",
       transform: "translateY(0)",
       boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
     },
@@ -95,42 +95,41 @@ export const BUTTON_VARIANTS: Record<
   },
   tertiary: {
     normal: {
-      bg: "white.absolute",
-      color: "black.600",
+      bg: "transparent",
+      color: "black.900",
       border: "1px solid",
-      borderColor: "black.50",
+      borderColor: "black.alpha16",
     },
     disabled: {
-      bg: "grey.10",
-      color: "grey.400",
-      borderColor: "grey.100",
+      bg: "transparent",
+      color: "gray.400",
+      borderColor: "gray.100",
       opacity: 0.6,
     },
     hover: {
       opacity: 0.8,
-      borderColor: "black.100",
+      borderColor: "black.alpha32",
       transform: "translateY(-0.5px)",
-      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
     },
     active: {
-      bg: "black.10",
-      borderColor: "black.200",
+      bg: "black.alpha4",
+      borderColor: "black.alpha24",
       transform: "translateY(0)",
-      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+      boxShadow: "0 1px 4px rgba(0, 0, 0, 0.15)",
     },
     focus: {
       outline: "none",
-      boxShadow: "0 0 0 3px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0 0 0 2px rgba(0, 0, 0, 0.1)",
     },
   },
 };
 
 export const BUTTON_BASE_STYLES = {
-  fontWeight: "600",
+  fontWeight: "500",
   fontSize: "14px",
   lineHeight: "20px",
   borderRadius: "12px",
-  padding: "12px 16px",
-  minHeight: "44px",
+  padding: "12px 24px",
   transition: "all 0.2s ease-in-out",
 };

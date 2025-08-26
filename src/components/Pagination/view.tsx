@@ -142,7 +142,7 @@ const Pagination: React.FC<PaginationProps> = ({
             totalPages - 3,
             totalPages - 2,
             totalPages - 1,
-            totalPages
+            totalPages,
           );
         } else {
           arr.push(1, "...", page - 1, page, page + 1, "...", totalPages);
@@ -150,7 +150,7 @@ const Pagination: React.FC<PaginationProps> = ({
       }
     } else {
       Array.from({ length: totalPages }, (_, i) => i + 1).forEach((number) =>
-        arr.push(number)
+        arr.push(number),
       );
     }
     setPageButtons(arr);

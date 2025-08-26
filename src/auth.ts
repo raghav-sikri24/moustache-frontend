@@ -30,7 +30,7 @@ export const getProtectedAxios = (): AxiosInstance => {
 
       return config;
     },
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error),
   );
 
   // Response interceptor
@@ -48,7 +48,7 @@ export const getProtectedAxios = (): AxiosInstance => {
               `${API_BASE_URL}api/token/refresh`,
               {
                 refresh_token: refreshToken,
-              }
+              },
             );
             const { access_token, refresh_token: newRefreshToken } = data;
 
@@ -82,7 +82,7 @@ export const getProtectedAxios = (): AxiosInstance => {
       }
 
       return Promise.reject(error);
-    }
+    },
   );
 
   return instance;

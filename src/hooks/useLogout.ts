@@ -11,7 +11,7 @@ export default function useLogout() {
   const resetAuthStore = useResetAuthStore();
   const logout = () => {
     resetAuthStore();
-    navigate("/login");
+    navigate("/landing-page");
     queryClient.clear();
   };
 

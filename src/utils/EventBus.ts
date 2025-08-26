@@ -54,7 +54,7 @@ export default class EventBus implements EventBusInterface {
    */
   addListener(
     eventName: string | number,
-    listener: { (arg?: any): void; (arg?: any): void }
+    listener: { (arg?: any): void; (arg?: any): void },
   ) {
     const listeners = this.eventListeners[eventName];
     if (Array.isArray(listeners)) {

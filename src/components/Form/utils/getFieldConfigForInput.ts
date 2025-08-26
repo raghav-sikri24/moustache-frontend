@@ -2,11 +2,11 @@ import { IFormConfig, IFormFields } from "./types";
 
 export function getFieldConfigForInput(
   formConfig: IFormConfig,
-  inputKey: string
+  inputKey: string,
 ): IFormFields | undefined {
   let fieldConfig = undefined;
   fieldConfig = formConfig.formFields.find(
-    (field) => field.inputKey === inputKey
+    (field) => field.inputKey === inputKey,
   );
 
   if (fieldConfig) return fieldConfig;

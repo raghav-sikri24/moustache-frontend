@@ -33,7 +33,7 @@ const CustomSelectInput = ({
     (value: string) => {
       onInput({ value, inputKey: inputKey });
     },
-    [onInput, inputKey]
+    [onInput, inputKey],
   );
 
   const getLabel =

@@ -110,7 +110,7 @@ export default function CustomTable<TData, TValue>({
 
   const getStickyColumnStyle = (
     isLast: boolean,
-    isHeader: boolean = false
+    isHeader: boolean = false,
   ): CSSProperties => {
     if (lastColumnSticky && isLast) {
       return {
@@ -264,7 +264,7 @@ export default function CustomTable<TData, TValue>({
                       p={"16px"}
                       borderRadius={getBorderRadius(
                         id,
-                        headerGroup?.headers?.length
+                        headerGroup?.headers?.length,
                       )}
                       cursor={isSortingEnabled ? "pointer" : "default"}
                       onClick={
@@ -303,7 +303,7 @@ export default function CustomTable<TData, TValue>({
                               ? null
                               : flexRender(
                                   column.column.columnDef.header,
-                                  column.getContext()
+                                  column.getContext(),
                                 )}
                           </CustomText>
                         )}
@@ -357,7 +357,7 @@ export default function CustomTable<TData, TValue>({
 
                           const isLast = isLastColumn(
                             index,
-                            row.getVisibleCells()?.length
+                            row.getVisibleCells()?.length,
                           );
 
                           const cellStyles: CSSProperties = {
@@ -387,14 +387,14 @@ export default function CustomTable<TData, TValue>({
                                     handleRowSelect(
                                       //@ts-ignore
                                       row.original.id,
-                                      !isChecked()
+                                      !isChecked(),
                                     );
                                   }}
                                 />
                               ) : (
                                 flexRender(
                                   cell.column.columnDef.cell,
-                                  cell.getContext()
+                                  cell.getContext(),
                                 )
                               )}
                             </Td>

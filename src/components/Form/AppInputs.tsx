@@ -36,7 +36,7 @@ const AppInputs = ({
         });
       }
     },
-    [dispatchValue, onInput, dispatchError]
+    [dispatchValue, onInput, dispatchError],
   );
 
   const handleBlur = useCallback(
@@ -68,7 +68,7 @@ const AppInputs = ({
       }
       onBlur({ inputKey, value });
     },
-    [formConfig, formValidators, dispatchError, onBlur]
+    [formConfig, formValidators, dispatchError, onBlur],
   );
 
   return (

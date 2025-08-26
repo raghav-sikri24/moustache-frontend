@@ -17,10 +17,11 @@ export default function CustomText(props: IProps) {
 
   return (
     <Text
-      className={"outfit"}
+      className={"font-outfit"}
       fontSize={fontSize}
       lineHeight={lineHeight}
       fontWeight={fontWeight}
+      letterSpacing={0}
       {...props}
     >
       {props.children}

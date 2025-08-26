@@ -14,7 +14,7 @@ const CustomDocumentInput = forwardRef((props: any, ref) => {
           if (e.target.files?.length === 0) return;
           //@ts-ignore
           const isAccepted = props.accept.some((suffix) =>
-            e.target.files?.[0]?.name.endsWith(suffix)
+            e.target.files?.[0]?.name.endsWith(suffix),
           );
 
           if (isAccepted) props.onChange(e);
